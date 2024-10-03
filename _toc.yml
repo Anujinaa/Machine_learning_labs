@@ -1,0 +1,41 @@
+format: jb-book
+root: intro
+parts:
+  - caption: Лаборатори_2_3
+    chapters:
+      - file: CS308_lab_23
+        title: Lab2_3
+  - caption: Лаборатори_4
+    chapters: 
+      - file: Lab_4
+        title: Lab 4
+  - caption: Лаборатори_5
+    chapters:
+      - file: svm_lab9
+        title: Lab 5
+      - file: svmlab10
+        title: Lab 5 continue
+  - caption: Лаборатори_6
+    chapters:
+      - file: CS308_Lab5,6
+        title: Lab 6
+  - caption: Лаборатори_7
+    chapters:
+      - file: cs308lab6
+        title: Lab 7
+  - caption: Лаборатори_8
+    chapters:
+      - file: ensemble
+        title: Lab 8
+  - caption: Лаборатори_9_10
+    chapters:
+      - file: covid19
+        title: Lab 10-11
+  - caption: Лаборатори_12_13
+    chapters:
+      - file: cs308_lab13_teacher_student
+        title: Lab 12-13
+  - caption: Лаборатори_15_16
+    chapters:
+      - file: Eduge_SVM_baseline
+        title: Lab 15-16

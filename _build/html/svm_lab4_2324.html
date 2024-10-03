@@ -1,0 +1,1288 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lab 4 &#8212; Машин сургалтын хичээлийн лабораториуд</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'svm_lab4_2324';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Машин сургалтын хичээлийн лабораториуд - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Машин сургалтын хичээлийн лабораториуд - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_2_3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="CS308_lab_23.html">Lab 2-3</a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="svm_lab9.html">Lab 5</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="svmlab10.html">Lab 5 continue</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_6</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="CS308_Lab5%2C6.html">Lab 6</a></li>
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_7</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cs308lab6.html">Lab 7</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_8</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ensemble.html">Lab 8</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_9_10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="covid19.html">Lab 9-10</a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_12_13</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cs308_lab13_teacher_student.html">Lab 12-13</a></li>
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_15_16</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Eduge_SVM_baseline.html">Lab 15-16</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsvm_lab4_2324.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/svm_lab4_2324.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab 4</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lab 4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-support-vector-machine">A Support Vector Machine</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Сангуудыг дуудаж оруулах</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-gradient-descent">Stochastic Gradient Descent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-error">Calculating the Error</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hinge-loss-function">Hinge Loss Function</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-function">Objective Function</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derive-the-objective-function">Derive the Objective Function</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-set">Data Set</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Stochastic Gradient Descent</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Кодын тайлбар Мөр мөрөөр</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svm">SVM-г сурцгаая!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Үнэлгээ</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Даалгавар 1: Кодын хэсгийг нөхөх</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-kernel">SVM Kernel</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-trick">Kernel trick танилцуулга</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel">Даалгавар 2: нэмэлт 2 Kernel хэрэгжүүлэх аргын кодыг бичиж туршин үр дүнг харьцуулах</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scikit-learn-svm-with-radial-basis-kernel">Scikit Learn SVM with Radial basis kernel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-with-rbf-performance-on-xor">SVM with RBF performance on XOR</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Даалгавар 3: Олон ангилалт SVM хэрэгжүүлэх алгоритмыг гүйцэтгэх</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Дүгнэлт</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Эндээс хаашаа явах вэ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-4">
+<h1>Lab 4<a class="headerlink" href="#lab-4" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-support-vector-machine">
+<h1>A Support Vector Machine<a class="headerlink" href="#a-support-vector-machine" title="Link to this heading">#</a></h1>
+<p>Лекц 8 дээр бид Дэмжигч вектор машины аргыг үзсэн ба энэхүү лабораторийн ажилаар уг аргыг Python хэл дээр өөрсдийн өгөгдөл ашиглан туршин үзэж стандарт сангын аргатай харьцуулах болно. Илүү ихийг мэдэхийг хүсвэл дараах судалгааны ажилуудыг санал болгож байна. Үүнд:</p>
+<p><strong>Schölkopf &amp; Smola</strong> (2002). Learning with Kernels. Support Vector Machines, Regularization, Optimization, and Beyond.</p>
+<p>Мөн түүнчлэн, MIT-ийн SVM-ийн математик суурьтай холбоотой товч танилцуулга байдаг.</p>
+<p><a class="reference external" href="https://www.google.de/search?client=ubuntu&amp;amp;channel=fs&amp;amp;q=svm+standford&amp;amp;ie=utf-8&amp;amp;oe=utf-8&amp;amp;gfe_rd=cr&amp;amp;ei=UfDhWM_BMunVXredsIgI#q=support+vector+machine+tutorial&amp;amp;channel=fs&amp;amp;start=10&amp;amp;">https://www.google.de/search?client=ubuntu&amp;channel=fs&amp;q=svm+standford&amp;ie=utf-8&amp;oe=utf-8&amp;gfe_rd=cr&amp;ei=UfDhWM_BMunVXredsIgI#q=support+vector+machine+tutorial&amp;channel=fs&amp;start=10&amp;</a>*</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+
+<span class="p">])</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">svm_sgd</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+
+    <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">eta</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">epochs</span> <span class="o">=</span> <span class="mi">100000</span>
+
+
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">epochs</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+            <span class="n">w</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># svm ангилагчийн хэрэгжүүлэх кодыг бичнэ үү</span>
+            <span class="c1"># svm ангилагчийн хэрэгжүүлэх кодыг бичнэ үү</span>
+            <span class="c1"># svm ангилагчийн хэрэгжүүлэх кодыг бичнэ үү</span>
+
+    <span class="k">return</span> <span class="n">w</span>
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">svm_sgd</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h2>Сангуудыг дуудаж оруулах<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Эхлээд бид python дээр шугаман алгебр болон тооцооллын үйлдлүүдийг хялбар удирдахын тулд numpy-г ашиглах болно. Суралцах явцыг графикаар дүрсэлж харахын тулд бид matplotlib ашиглана.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section id="stochastic-gradient-descent">
+<h3>Stochastic Gradient Descent<a class="headerlink" href="#stochastic-gradient-descent" title="Link to this heading">#</a></h3>
+<p>Perceptron-ийн хувьд бид python3 болон numpy ашигладаг. SVM нь Stochastic Gradient Descent алгоритм (SGD) ашиглан суралцах болно. Gradient Descent нь зардлын функцийн градиентийг дагаж функцийг багасгадаг. Дэлгэрэнгүй мэдээллийг үзнэ үү:</p>
+<p>Wikipedia - stochastic gradient descent</p>
+</section>
+<section id="calculating-the-error">
+<h3>Calculating the Error<a class="headerlink" href="#calculating-the-error" title="Link to this heading">#</a></h3>
+<p>Урьдчилан таамаглах алдааг тооцоолохын тулд эхлээд svm-ийн зорилгын функцийг тодорхойлох хэрэгтэй.</p>
+<section id="hinge-loss-function">
+<h4>Hinge Loss Function<a class="headerlink" href="#hinge-loss-function" title="Link to this heading">#</a></h4>
+<p>Үүнийг хийхийн тулд бид алдааны функцийг тодорхойлж, таамаглалын алдааг тооцоолох хэрэгтэй. Бид перцептрондоо Hinge алдагдлыг ашиглах болно:</p>
+<div class="math notranslate nohighlight">
+\[c(x, y, f(x)) = (1 - y * f(x))_+\]</div>
+<p><span class="math notranslate nohighlight">\(c\)</span> алдагдлын функц юм, <span class="math notranslate nohighlight">\(x\)</span> дээж, <span class="math notranslate nohighlight">\(y\)</span> label, <span class="math notranslate nohighlight">\(f(x)\)</span> таамагласан label.</p>
+<p>Энэ нь дараахь зүйлийг хэлнэ.
+$<span class="math notranslate nohighlight">\(
+c(x, y, f(x))=
+\begin{cases}
+    0,&amp; \text{if } y*f(x)\geq 1\\
+    1-y*f(x),              &amp; \text{else}
+\end{cases}
+\)</span>$</p>
+<p>Хэрэв y ба f(x) нь тэмдэгт утгатай бол <span class="math notranslate nohighlight">\((+1,-1)\)</span> бодно:</p>
+<p>хэрэв алдаа 0 бол, <span class="math notranslate nohighlight">\(y*f(x)\)</span> нэмэх, тус тус хоёр утга ижил тэмдэгтэй байна.</p>
+<p>алдаа <span class="math notranslate nohighlight">\(1-y*f(x)\)</span> бол <span class="math notranslate nohighlight">\(y*f(x)\)</span> сөрөг</p>
+</section>
+<section id="objective-function">
+<h4>Objective Function<a class="headerlink" href="#objective-function" title="Link to this heading">#</a></h4>
+<p>Бид алдагдлын функцийг тодорхойлсон болохоор svm-ийн зорилгын функцийг тодорхойлж болно.</p>
+<div class="math notranslate nohighlight">
+\[\underset{w}{min}\ \lambda\parallel w\parallel^2 + \ \sum_{i=1}^n\big(1-y_i \langle x_i,w \rangle\big)_+\]</div>
+<p>Дээрхээс харвал svm-ийн зорилго нь хоёр нэр томъёоноос бүрдэнэ. Эхний нэр томъёо нь тогтмолжуулагч, хоёр дахь нэр томъёо нь алдагдал юм. Зохицуулагч нь ашгийн хэмжээг нэмэгдүүлэх ба алдагдлын хооронд тэнцвэржүүлдэг. Дэлгэрэнгүй мэдээлэл авахын тулд дээр дурдсан Schölkopf &amp; Smola номын зааварчилгааг харна уу.</p>
+</section>
+<section id="derive-the-objective-function">
+<h4>Derive the Objective Function<a class="headerlink" href="#derive-the-objective-function" title="Link to this heading">#</a></h4>
+<p>Энэ функцийг багасгахын тулд бидэнд энэ функцийн градиент хэрэгтэй.</p>
+<p>Бидэнд хоёр нэр томъёо байгаа тул ялгахдаа нийлбэрийн дүрмийг ашиглан тэдгээрийг тусад нь удирдах болно.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\delta}{\delta w_k} \lambda\parallel w\parallel^2 \ = 2 \lambda w_k
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{\delta}{\delta w_k} \big(1-y_i \langle x_i,w \rangle\big)_+ \ = \begin{cases}
+    0,&amp; \text{if } y_i \langle x_i,w \rangle\geq 1\\
+    -y_ix_{ik},              &amp; \text{else}
+\end{cases}
+\end{split}\]</div>
+<p>Энэ нь буруу ангилсан дээж байгаа гэсэн үг <span class="math notranslate nohighlight">\(x_i\)</span>, <span class="math notranslate nohighlight">\(y_i  тус  тус  \langle x_i,w \rangle \ &lt; \ 1\)</span>, бид хоёр нэр томъёоны градиентыг ашиглан жингийн вектор w-г шинэчилнэ. Хэрэв <span class="math notranslate nohighlight">\(y_i \langle x_i,w \rangle \geq 1\)</span>. Бид w-г зохицуулагчийн градиентаар шинэчилнэ. Дүгнэж хэлэхэд svm-ийн стохастик градиент нь дараах байдалтай байна.</p>
+<p>if <span class="math notranslate nohighlight">\(y_i⟨x_i,w⟩ &lt; 1\)</span>:
+$<span class="math notranslate nohighlight">\(
+w = w + \eta (y_ix_i - 2\lambda w)
+\)</span><span class="math notranslate nohighlight">\(
+else:
+\)</span><span class="math notranslate nohighlight">\(
+w = w + \eta (-2\lambda w)
+\)</span>$</p>
+</section>
+</section>
+<section id="data-set">
+<h3>Data Set<a class="headerlink" href="#data-set" title="Link to this heading">#</a></h3>
+<p>Эхлээд бид label-тэй өгөгдлийн багцыг тодорхойлох хэрэгтэй.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Хялбар байлгахын тулд бид өгөгдлийн багцад bias нэмнэ:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+
+<span class="p">])</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Энэхүү жижиг мэдээллийн багц нь <span class="math notranslate nohighlight">\(-1\)</span> гэсэн label-тэй хоёр дээж, <span class="math notranslate nohighlight">\(+1\)</span> гэсэн label-тэй гурван дээжийг агуулсан. Энэ нь өгөгдлийн багц нь хоёр жишээ анги агуулсан тул бид хоёртын ангиллын асуудалтай байна гэсэн үг юм. Өгөгдлийн багцыг шугаман байдлаар салгах боломжтой графикаар зурцгаая:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">sample</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="c1"># Сөрөг дээжийг зурах</span>
+    <span class="k">if</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1"># Эерэг дээжийг зурах</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Хоёр ангийг тусгаарлаж болох hyperplane зурах.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mf">0.5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7bc7f4389780&gt;]
+</pre></div>
+</div>
+<img alt="_images/e311761a1a7ecae1be569ba1220cde02463d0670870a1627f8571ff7051e70bd.png" src="_images/e311761a1a7ecae1be569ba1220cde02463d0670870a1627f8571ff7051e70bd.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="id2">
+<h2>Stochastic Gradient Descent<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Эцэст нь бид шинэчлэх дүрмээ ашиглан SGD алгоритмаа кодлох боломжтой боллоо. Перцептронуудын зорилгын функцээс эсрэгээр бид алгоритмдаа тогтмолжуулагчийг ашигладаг. Бидэнд шугаман ялгахад хялбар жижиг өгөгдлийн багц байгаа тул энэ нь үнэндээ шаардлагагүй бөгөөд бидний стохастик градиент өгөгдлийн алгоритм үүнгүйгээр илүү хурдан нэгдэх болно.</p>
+<p>Энгийн байлгахын тулд бид дээжийн багц дээр шугаман давталт хийнэ. Том өгөгдлийн багцын хувьд for-loop дахь давталт бүрийн үед түүврийг санамсаргүй байдлаар сонгох нь илүү дээр үр дүн гаргах юм.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">svm_sgd</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">eta</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">epochs</span> <span class="o">=</span> <span class="mi">100000</span>
+
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">epochs</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+            <span class="n">w</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># svm ангилагчийн хэрэгжүүлэх кодыг бичнэ үү</span>
+            <span class="c1"># svm ангилагчийн хэрэгжүүлэх кодыг бичнэ үү</span>
+            <span class="c1"># svm ангилагчийн хэрэгжүүлэх кодыг бичнэ үү</span>
+            <span class="c1"># svm ангилагчийн хэрэгжүүлэх кодыг бичнэ үү</span>
+            <span class="c1"># svm ангилагчийн хэрэгжүүлэх кодыг бичнэ үү</span>
+            <span class="c1"># svm ангилагчийн хэрэгжүүлэх кодыг бичнэ үү</span>
+
+
+    <span class="k">return</span> <span class="n">w</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Бид sgd <span class="math notranslate nohighlight">\( 100000\)</span> удаа ажиллуулна. Манай сургалтын параметрийг <span class="math notranslate nohighlight">\(1\)</span> гэж тохируулсан. Зохицуулах параметрийн хувьд бид <span class="math notranslate nohighlight">\(1/t\)</span>-ийг сонгосон тул epoch нэмэгдэх тусам энэ үзүүлэлт буурах болно.</p>
+<section id="id3">
+<h3>Кодын тайлбар Мөр мөрөөр<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>line <b>2</b>: Перцептроны жингийн векторыг тэгээр эхлүүлнэ<br>
+line <b>3</b>: Сурах хурдыг тохируулна уу 1<br>
+line <b>4</b>: Epoch тоог тохируулна уу<br>
+line <b>6</b>: Бүх өгөгдлийн багцыг n удаа давтана. Тогтворжуулах параметрийг тооцоолохдоо тэг болгон хуваахаас зайлсхийхийн тулд давталт нь <span class="math notranslate nohighlight">\(1\)</span>-ээс эхэлдэг.<br>
+line <b>7</b>: Өгөгдлийн багц дахь дээж бүрийг давтана. <br>
+line <b>8</b>: Буруу ангилах нөхцөл <span class="math notranslate nohighlight">\(y_i \langle x_i,w \rangle &lt; 1\)</span><br>
+line <b>9</b>: Жинг шинэчлэх <span class="math notranslate nohighlight">\(w = w + \eta (y_ix_i - 2\lambda w)\)</span> суралцах хурд, <span class="math notranslate nohighlight">\(\eta\)</span> болон тогтворжуулагч зэрэг орно <span class="math notranslate nohighlight">\(\lambda\)</span><br>
+line <b>11</b>: Зөв ангилсан бол жингийн векторыг тогтворжуулагчийн нэр томъёогоор шинэчилнэ <span class="math notranslate nohighlight">\(w = w + \eta (-2\lambda w)\)</span>.<br></p>
+</section>
+<section id="svm">
+<h3>SVM-г сурцгаая!<a class="headerlink" href="#svm" title="Link to this heading">#</a></h3>
+<p>Дараа нь бид сургалтын өгөгдөлд тохирох жингийн векторыг тооцоолохын тулд кодыг ажиллуулж болно. Буруу ангилсан дээж байгаа бол бид буруу ангилсан, зөв ангилсан дээжийн тоог хэвлэх болно.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">svm_sgd_plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+
+    <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">eta</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">epochs</span> <span class="o">=</span> <span class="mi">100000</span>
+    <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">epochs</span><span class="p">):</span>
+        <span class="n">error</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+              <span class="c1"># svm ангилагчийн хэрэгжүүлэх кодыг бичнэ үү</span>
+                <span class="n">error</span> <span class="o">=</span> <span class="mi">1</span>
+              <span class="c1"># svm ангилагчийн хэрэгжүүлэх кодыг бичнэ үү</span>
+        <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="s1">&#39;|&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Misclassified&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svm_sgd_plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8016b61f830e7d3d8082c19035fa5b4c210c5d27e048b77bc1ced210444d9a07.png" src="_images/8016b61f830e7d3d8082c19035fa5b4c210c5d27e048b77bc1ced210444d9a07.png" />
+</div>
+</div>
+<p>Дээрх графикаас svm нь олон epoch ажиллах тусам буруу ангиллыг бага гаргадаг болохыг харуулж байна. Манай перцептроноос ялгаатай нь одоогийн дээжийг зөв ангилсан ч svm нь жингийн вектороо зохицуулагчаар шинэчилдэг тул бид байнга тэг алдаа гаргадаггүй. Муу мэт харагдаж байгаа зүйл бол SVM-ийн хүч чадал бөгөөд энэ нь тогтмолжуулагчийг ашиглан хоёр ангийн хоорондох зөрүүг нэмэгдүүлэхийг үргэлж хичээдэг.</p>
+<p>Нэгтгэн дүгнэхэд перцептрон ханасан бөгөөд тусгаарлах гипер хавтгайг олоход манай SVM нь эсрэгээрээ хоёр ангийн хоорондох зайг хамгийн их байлгах замаар гипер хавтгайг оновчтой болгохыг үргэлж эрмэлзэнэ.</p>
+<p>SVM-ийн жингийн вектор нь 100000 epoch дараах хэвийсэн утгыг агуулсан байна <span class="math notranslate nohighlight">\((1.56,  3.17,  11.12)\)</span>.<br>
+Бид одоо дараах таамаглах функцийг гаргаж авах боломжтой.</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \langle x,(1.56,3.17)\rangle - 11.12
+\]</div>
+<p>Жингийн вектор нь <span class="math notranslate nohighlight">\((1.56,3.17)\)</span> ба bias нь 11.12 гурав дахь бичилт юм.</p>
+</section>
+</section>
+<section id="id4">
+<h2>Үнэлгээ<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>Перцептрон зөв сурсан эсэхийг шалгахын тулд өгөгдлийн цуглуулгад байгаа дээжийг гараар ангилж үзье.</p>
+<p>Эхний дээж <span class="math notranslate nohighlight">\((-2, 4)\)</span>, сөрөг байх ёстой:</p>
+<div class="math notranslate nohighlight">
+\[-2*1,56+4*3,17 - 11,12 = sign(-1,56) = -1\]</div>
+<p>Хоёр дахь дээж <span class="math notranslate nohighlight">\((4, 1)\)</span>, сөрөг байх ёстой:</p>
+<div class="math notranslate nohighlight">
+\[4*1,56+1*3,17 - 11,12 = sign(-1,71) = -1\]</div>
+<p>Гурав дахь жишээ <span class="math notranslate nohighlight">\((1, 6)\)</span>, эерэг байх ёстой:</p>
+<div class="math notranslate nohighlight">
+\[1*1,56+6*3,17-11,12 = sign(9,46) = +1\]</div>
+<p>Дөрөв дэх жишээ <span class="math notranslate nohighlight">\((2, 4)\)</span>, эерэг байх ёстой:</p>
+<div class="math notranslate nohighlight">
+\[2*1,56+4*3,17 - 11,12 = sign(4,68) = +1\]</div>
+<p>Тав дахь дээж <span class="math notranslate nohighlight">\((6, 2)\)</span>, эерэг байх ёстой:</p>
+<div class="math notranslate nohighlight">
+\[6*1,56+2*3,17 - 11,12 = sign(4,58) = +1\]</div>
+<p>Бидний ангилаг сургалтанд ашиглагдаагүй өгөгдлийг хэр сайн нэгтгэж байгааг шалгахын тулд одоо хоёр туршилтын дээжийг тодорхойлъё.</p>
+<p>Эхний туршилтын дээж <span class="math notranslate nohighlight">\((2, 2)\)</span>, сөрөг байх ёстой:</p>
+<div class="math notranslate nohighlight">
+\[2*1,56+2*3,17 - 11,12 = sign(-1,66) = -1\]</div>
+<p>Хоёр дахь туршилтын дээж <span class="math notranslate nohighlight">\((4, 3)\)</span>, эерэг байх ёстой:</p>
+<div class="math notranslate nohighlight">
+\[4*1,56+3*3,17 - 11,12 = sign(4,63) = +1\]</div>
+<p>Хоёр туршилтын дээжийг зөв ангилсан. Үүнийг геометрийн хувьд шалгахын тулд туршилтын дээж, гиперплан дээр дээжүүдийг хамтад нь зурж үзье.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">svm_sgd</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">sample</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="c1"># Сөрөг дээжийг зурах</span>
+    <span class="k">if</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1"># Эерэг дээжийг зурах</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Туршилтын дээжийг нэмнэх</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="c1"># svm_sgd()-ээр тооцоолсон гипер хавтгайг дүрслэх</span>
+<span class="n">x2</span><span class="o">=</span><span class="p">[</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="o">-</span><span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">x3</span><span class="o">=</span><span class="p">[</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="o">-</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="n">x2x3</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x2</span><span class="p">,</span><span class="n">x3</span><span class="p">])</span>
+<span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">V</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">x2x3</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.quiver.Quiver at 0x7bc7cfa34160&gt;
+</pre></div>
+</div>
+<img alt="_images/a3ca3486afa8ddf262a84095fd8fcf7b6e2622f2ccf41e13ed7d9c49c36288e8.png" src="_images/a3ca3486afa8ddf262a84095fd8fcf7b6e2622f2ccf41e13ed7d9c49c36288e8.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.08567810847428549
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id5">
+<h1>Даалгавар 1: Кодын хэсгийг нөхөх<a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="svm-kernel">
+<h1>SVM Kernel<a class="headerlink" href="#svm-kernel" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">pltcolors</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span><span class="p">,</span> <span class="n">svm</span><span class="p">,</span> <span class="n">discriminant_analysis</span><span class="p">,</span> <span class="n">metrics</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plotLine</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">xRange</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Plot a (separating) line given the normal vector (weights) and point of intercept &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">:</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">x0</span> <span class="o">/</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="n">yy</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">xRange</span> <span class="o">-</span> <span class="n">x0</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="n">x0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xRange</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="n">linestyle</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plotSvm</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">support</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">intercept</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">separatorLabel</span><span class="o">=</span><span class="s1">&#39;Separator&#39;</span><span class="p">,</span>
+            <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="p">[[</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Plot the SVM separation, and margin &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">support</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">support</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">support</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Support&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+                   <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of support vectors = </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">support</span><span class="p">)))</span>
+    <span class="k">if</span> <span class="n">w</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">bound</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">plotLine</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">xx</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">separatorLabel</span><span class="p">)</span>
+        <span class="c1"># Захын зайг дүрслэх</span>
+        <span class="k">if</span> <span class="n">support</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">signedDist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">support</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+            <span class="n">margin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">signedDist</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">signedDist</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+            <span class="n">supportMaxNeg</span> <span class="o">=</span> <span class="n">support</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">signedDist</span><span class="p">)]</span>
+            <span class="n">plotLine</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">xx</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">supportMaxNeg</span><span class="p">,</span> <span class="s1">&#39;Margin -&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+            <span class="n">supportMaxPos</span> <span class="o">=</span> <span class="n">support</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">signedDist</span><span class="p">)]</span>
+            <span class="n">plotLine</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">xx</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">supportMaxPos</span><span class="p">,</span> <span class="s1">&#39;Margin +&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Margin = </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">margin</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">bound</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">bound</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">cb</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">loc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">cb</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
+    <span class="n">cb</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">([</span><span class="s1">&#39;-1&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plotHeatMap</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.2g&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Fix heatmap plot from Seaborn with pyplot 3.1.0, 3.1.1</span>
+<span class="sd">        https://stackoverflow.com/questions/56942670/matplotlib-seaborn-first-and-last-row-cut-in-half-of-heatmap-plot</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">xticklabels</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> \
+                     <span class="n">fmt</span><span class="o">=</span><span class="n">fmt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">bottom</span><span class="p">,</span> <span class="n">top</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">bottom</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">top</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">title</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">xlabel</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ylabel</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plotConfusionMatrix</span><span class="p">(</span><span class="n">yTrue</span><span class="p">,</span> <span class="n">yEst</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.2g&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">plotHeatMap</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">yTrue</span><span class="p">,</span> <span class="n">yEst</span><span class="p">),</span> <span class="n">classes</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Estimations&#39;</span><span class="p">,</span> \
+                <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;True values&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generateBatchXor</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Four gaussian clouds in a Xor fashion &quot;&quot;&quot;</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">yB0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.5</span>
+    <span class="n">yB1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.5</span>
+    <span class="n">y0</span> <span class="o">=</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">yB0</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">yB1</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">*=</span> <span class="n">y0</span>
+    <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="n">y1</span>
+    <span class="n">X</span> <span class="o">-=</span> <span class="n">X</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">X</span><span class="p">,</span> <span class="n">y0</span><span class="o">*</span><span class="n">y1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">]</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">pltcolors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+<span class="n">nFeatures</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">xTrain</span><span class="p">,</span> <span class="n">yTrain</span> <span class="o">=</span> <span class="n">generateBatchXor</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">plotSvm</span><span class="p">(</span><span class="n">xTrain</span><span class="p">,</span> <span class="n">yTrain</span><span class="p">)</span>
+<span class="n">xTest</span><span class="p">,</span> <span class="n">yTest</span> <span class="o">=</span> <span class="n">generateBatchXor</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">plotSvm</span><span class="p">(</span><span class="n">xTest</span><span class="p">,</span> <span class="n">yTest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b271499ac926ce628c859e8b81e3f754fb0a60199341171d7c839ad10a6dec79.png" src="_images/b271499ac926ce628c859e8b81e3f754fb0a60199341171d7c839ad10a6dec79.png" />
+<img alt="_images/db8f482bd9ba19da42391701f02e844cac3e9b2a9f5641e9ab755911ca8078bc.png" src="_images/db8f482bd9ba19da42391701f02e844cac3e9b2a9f5641e9ab755911ca8078bc.png" />
+</div>
+</div>
+<section id="kernel-trick">
+<h2>Kernel trick танилцуулга<a class="headerlink" href="#kernel-trick" title="Link to this heading">#</a></h2>
+<p>Регресс гэх мэт шугаман тусгаарлагчийг ашиглах үед шугаман бус функцийг шийдвэрлэх уламжлалт арга бол анхны шинж чанаруудын зэрэгт болон үржвэрүүдийг ашиглан функцын орон зайг өргөжүүлэх явдал юм.</p>
+<p>Шугаман арганд хязгаарлалт бий. Жишээлбэл, XOR асуудлыг зөв шийдвэрийн муж гаргаагүй байна.</p>
+<p>SVM нь “Kernel trick” гэгддэг шинэ аргыг ашигласан.</p>
+<p><span class="math notranslate nohighlight">\(h(x)\)</span> функцийг ашиглан <span class="math notranslate nohighlight">\(x\)</span>-д хувиргалтыг хэрэгжүүлцгээе.</p>
+<p>Лагранж (Вольф) давхар (хос) асуудал дараах байдалтай байна.
+$<span class="math notranslate nohighlight">\(\begin{align}
+\mathcal{L}_d (\alpha)
+&amp;= \sum_{i=0}^n \alpha_i - \frac 12 \sum_{i=0}^n \sum_{k=0}^n \alpha_i \alpha_k y_i y_k h(x_i)^T h(x_k) \\
+&amp;= \sum_{i=0}^n \alpha_i - \frac 12 \sum_{i=0}^n \sum_{k=0}^n \alpha_i \alpha_k \langle y_i h(x_i), y_k  h(x_k) \rangle \\
+\end{align}\)</span>$</p>
+<p><strong>Subject to <span class="math notranslate nohighlight">\(\forall i\in 1..n\)</span>:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \le \alpha_i \le C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sum_{i=0}^n \alpha_i y_i = 0\)</span></p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\( w = \sum_{i=0}^n \alpha_i y_i h(x_i)\)</span> тул таамаглах функц байна:
+$<span class="math notranslate nohighlight">\( f(x) = sign(w^T h(x) + b) = sign \left(\sum_{i=0}^n \alpha_i y_i \langle h(x_i), h(x) \rangle \right) \)</span>$</p>
+<p>Энэ таамаглалыг дэмжих вектор болох <span class="math notranslate nohighlight">\(\alpha_i &gt; 0\)</span>-д тооцоолох шаардлагатай.</p>
+<p>Тохиромжтой болон таамаглал хоёулаа Kernel функц гэгддэг <span class="math notranslate nohighlight">\(K(x, x') = \langle h(x), h(x') \rangle\)</span> дотоод бүтээгдэхүүн дээр суурилдаг. Энэ функц нь тэгш хэмтэй, хагас тодорхой байна.</p>
+<p>Gaussian Radial Basis Function (RBF) : <span class="math notranslate nohighlight">\(K(x, x') = exp(- \gamma \Vert x - x' \Vert^2 )\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">KernelSvmClassifier</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">kernel</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">C</span> <span class="o">=</span> <span class="n">C</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kernel</span> <span class="o">=</span> <span class="n">kernel</span>          <span class="c1"># &lt;---</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">supportVectors</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="c1"># ---&gt;</span>
+        <span class="c1"># h(x) y -ийн Gram matrix</span>
+        <span class="n">hXX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x1</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x2</span><span class="p">:</span>  <span class="bp">self</span><span class="o">.</span><span class="n">kernel</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="p">),</span>
+                                  <span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+        <span class="n">yp</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">GramHXy</span> <span class="o">=</span> <span class="n">hXX</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">yp</span><span class="p">,</span> <span class="n">yp</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+        <span class="c1"># &lt;---</span>
+
+        <span class="c1"># Lagrange давхар асуудал</span>
+        <span class="k">def</span> <span class="nf">Ld0</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">alpha</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">alpha</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">alpha</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+
+        <span class="c1"># алфа дээрх Лд-ийн хэсэгчилсэн уламжлал</span>
+        <span class="k">def</span> <span class="nf">Ld0dAlpha</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+        <span class="c1"># Хэлбэрийн альфа дээрх хязгаарлалт :</span>
+        <span class="c1"># -  d - C*alpha  = 0</span>
+        <span class="c1"># -  b - A*alpha &gt;= 0</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">)))</span>             <span class="c1"># &lt;---</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">C</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">)))</span>  <span class="c1"># &lt;---</span>
+        <span class="n">constraints</span> <span class="o">=</span> <span class="p">({</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;eq&#39;</span><span class="p">,</span>   <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>     <span class="s1">&#39;jac&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">y</span><span class="p">},</span>
+                       <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ineq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">b</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">a</span><span class="p">),</span> <span class="s1">&#39;jac&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="o">-</span><span class="n">A</span><span class="p">})</span>
+
+        <span class="c1"># Эсрэгээр нь багасгах замаар дээд зэргээр нэмэгдүүлэх</span>
+        <span class="n">optRes</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">fun</span><span class="o">=</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="o">-</span><span class="n">Ld0</span><span class="p">(</span><span class="n">GramHXy</span><span class="p">,</span> <span class="n">a</span><span class="p">),</span>
+                                   <span class="n">x0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span>
+                                   <span class="n">method</span><span class="o">=</span><span class="s1">&#39;SLSQP&#39;</span><span class="p">,</span>
+                                   <span class="n">jac</span><span class="o">=</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="o">-</span><span class="n">Ld0dAlpha</span><span class="p">(</span><span class="n">GramHXy</span><span class="p">,</span> <span class="n">a</span><span class="p">),</span>
+                                   <span class="n">constraints</span><span class="o">=</span><span class="n">constraints</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">optRes</span><span class="o">.</span><span class="n">x</span>
+        <span class="c1"># ---&gt;</span>
+        <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-8</span>
+        <span class="n">supportIndices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">&gt;</span> <span class="n">epsilon</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">supportVectors</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">supportIndices</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">supportAlphaY</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">supportIndices</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="p">[</span><span class="n">supportIndices</span><span class="p">]</span>
+        <span class="c1"># &lt;---</span>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Predict y values in {-1, 1} &quot;&quot;&quot;</span>
+        <span class="c1"># ---&gt;</span>
+        <span class="k">def</span> <span class="nf">predict1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">kernel</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">supportVectors</span><span class="p">)</span>
+            <span class="n">x2</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">supportAlphaY</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+
+        <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">predict1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">d</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="c1"># &lt;---</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">GRBF</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span> <span class="n">diff</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+
+
+<span class="n">model30</span> <span class="o">=</span> <span class="n">KernelSvmClassifier</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="n">GRBF</span><span class="p">)</span>
+<span class="n">model30</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">xTrain</span><span class="p">,</span> <span class="n">yTrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="kernel">
+<h1>Даалгавар 2: нэмэлт 2 Kernel хэрэгжүүлэх аргын кодыг бичиж туршин үр дүнг харьцуулах<a class="headerlink" href="#kernel" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">plotSvm</span><span class="p">(</span><span class="n">xTrain</span><span class="p">,</span> <span class="n">yTrain</span><span class="p">,</span> <span class="n">support</span><span class="o">=</span><span class="n">model30</span><span class="o">.</span><span class="n">supportVectors</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="c1"># Тооцоолол, шийдвэрийн хил хязгаар</span>
+<span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">X0</span><span class="p">,</span> <span class="n">X1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">xx</span><span class="p">)</span>
+<span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">X0</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">X1</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">Y30</span> <span class="o">=</span> <span class="n">model30</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X0</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X0</span><span class="p">,</span> <span class="n">X1</span><span class="p">,</span> <span class="n">Y30</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of support vectors = 37
+</pre></div>
+</div>
+<img alt="_images/74fe31fe48e901bad54ed95704c94f326a45b3f3b560956efb55c65a1e66ebcc.png" src="_images/74fe31fe48e901bad54ed95704c94f326a45b3f3b560956efb55c65a1e66ebcc.png" />
+</div>
+</div>
+<section id="scikit-learn-svm-with-radial-basis-kernel">
+<h2>Scikit Learn SVM with Radial basis kernel<a class="headerlink" href="#scikit-learn-svm-with-radial-basis-kernel" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model31</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;rbf&#39;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">shrinking</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">model31</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">xTrain</span><span class="p">,</span> <span class="n">yTrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>SVC(C=10, gamma=0.5, shrinking=False)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">SVC</label><div class="sk-toggleable__content"><pre>SVC(C=10, gamma=0.5, shrinking=False)</pre></div></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">plotSvm</span><span class="p">(</span><span class="n">xTrain</span><span class="p">,</span> <span class="n">yTrain</span><span class="p">,</span> <span class="n">support</span><span class="o">=</span><span class="n">model31</span><span class="o">.</span><span class="n">support_vectors_</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="c1"># Тооцоолол, шийдвэрийн хил хязгаар</span>
+<span class="n">Y31</span> <span class="o">=</span> <span class="n">model31</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X0</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X0</span><span class="p">,</span> <span class="n">X1</span><span class="p">,</span> <span class="n">Y31</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of support vectors = 41
+</pre></div>
+</div>
+<img alt="_images/63f81fde0386e10bddef99622c2807cd661c78a0eaedc661149ca86bf5e3b63e.png" src="_images/63f81fde0386e10bddef99622c2807cd661c78a0eaedc661149ca86bf5e3b63e.png" />
+</div>
+</div>
+<section id="svm-with-rbf-performance-on-xor">
+<h3>SVM with RBF performance on XOR<a class="headerlink" href="#svm-with-rbf-performance-on-xor" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">model</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">title</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="n">model30</span><span class="p">,</span> <span class="n">model31</span><span class="p">],</span> <span class="n">axes</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Custom SVM with RBF&quot;</span><span class="p">,</span> <span class="s2">&quot;SKLearn SVM with RBF&quot;</span><span class="p">]):</span>
+    <span class="n">yEst3</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">xTest</span><span class="p">)</span>
+    <span class="n">plotConfusionMatrix</span><span class="p">(</span><span class="n">yTest</span><span class="p">,</span> <span class="n">yEst3</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a288a719a9ac4938216f4a4b441b7ba5b038b5b3362c5f148db24a40a5fbad61.png" src="_images/a288a719a9ac4938216f4a4b441b7ba5b038b5b3362c5f148db24a40a5fbad61.png" />
+</div>
+</div>
+<p>Хоёр загварын таамаглал XOR жишээн дээр бараг таарч байна.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id6">
+<h1>Даалгавар 3: Олон ангилалт SVM хэрэгжүүлэх алгоритмыг гүйцэтгэх<a class="headerlink" href="#id6" title="Link to this heading">#</a></h1>
+<section id="id7">
+<h2>Дүгнэлт<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>Шугаман салгах боломжгүй асуудлуудад зориулсан SVM ангилагчийн хүчийг бид харуулсан. 1990-ээд оны сүүлчээс эхлэн SVM нь олон асуудалд зориулсан машин сургалтын алгоритмын бүлийн тэргүүлэгч байсан. Энэ байдал 2010 оноос хойш бага зэрэг өөрчлөгдсөн бөгөөд гүнзгийрүүлсэн сургалт нь зарим ангиллын бодлогод илүү сайн гүйцэтгэлийг харуулсан. Гэсэн хэдий ч SVM нь олон нөхцөл байдалд илүү хүчтэй хэвээр байна. Жишээлбэл, SVM-д зориулсан сургалтын мэдээллийн хэмжээ нь гүнзгий суралцахад шаардагдах хэмжээнээс бага байна.</p>
+<section id="id8">
+<h3>Эндээс хаашаа явах вэ<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Multiclass classifier using Neural Nets in Keras (<a class="reference internal" href="#ClassificationMulti2Features-Keras.html"><span class="xref myst">HTML</span></a> / <a class="reference internal" href="#ClassificationMulti2Features-Keras.ipynb"><span class="xref myst">Jupyter</span></a>)</p></li>
+<li><p>Multiclass classifier using Decision Trees (<a class="reference internal" href="#ClassificationMulti2Features-Tree.html"><span class="xref myst">HTML</span></a> / <a class="reference internal" href="#ClassificationMulti2Features-Tree.ipynb"><span class="xref myst">Jupyter</span></a>)</p></li>
+<li><p>Bivariate continuous function approximation with Linear Regression (<a class="reference internal" href="#ClassificationContinuous2Features.html"><span class="xref myst">HTML</span></a> / <a class="reference internal" href="#ClassificationContinuous2Features.ipynb"><span class="xref myst">Jupyter</span></a>)</p></li>
+<li><p>Bivariate continuous function approximation with k Nearest Neighbors (<a class="reference internal" href="#ClassificationContinuous2Features-KNN.html"><span class="xref myst">HTML</span></a> / <a class="reference internal" href="#ClassificationContinuous2Features-KNN.ipynb"><span class="xref myst">Jupyter</span></a>)</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lab 4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-support-vector-machine">A Support Vector Machine</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Сангуудыг дуудаж оруулах</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-gradient-descent">Stochastic Gradient Descent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-error">Calculating the Error</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hinge-loss-function">Hinge Loss Function</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#objective-function">Objective Function</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derive-the-objective-function">Derive the Objective Function</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-set">Data Set</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Stochastic Gradient Descent</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Кодын тайлбар Мөр мөрөөр</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svm">SVM-г сурцгаая!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Үнэлгээ</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Даалгавар 1: Кодын хэсгийг нөхөх</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-kernel">SVM Kernel</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-trick">Kernel trick танилцуулга</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel">Даалгавар 2: нэмэлт 2 Kernel хэрэгжүүлэх аргын кодыг бичиж туршин үр дүнг харьцуулах</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scikit-learn-svm-with-radial-basis-kernel">Scikit Learn SVM with Radial basis kernel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svm-with-rbf-performance-on-xor">SVM with RBF performance on XOR</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Даалгавар 3: Олон ангилалт SVM хэрэгжүүлэх алгоритмыг гүйцэтгэх</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Дүгнэлт</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Эндээс хаашаа явах вэ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mongolian University of Science and Technology teacher Ph.D Orgil.J
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
