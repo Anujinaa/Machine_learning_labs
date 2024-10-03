@@ -1,0 +1,1661 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lab 2-3 &#8212; Машин сургалтын хичээлийн лабораториуд</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CS308_lab_23';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lab 5" href="svm_lab9.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Машин сургалтын хичээлийн лабораториуд - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Машин сургалтын хичээлийн лабораториуд - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_2_3</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 2-3</a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="svm_lab9.html">Lab 5</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="svmlab10.html">Lab 5 continue</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_6</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="CS308_Lab5%2C6.html">Lab 6</a></li>
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_7</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cs308lab6.html">Lab 7</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_8</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ensemble.html">Lab 8</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_9_10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="covid19.html">Lab 9-10</a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_12_13</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cs308_lab13_teacher_student.html">Lab 12-13</a></li>
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лаборатори_15_16</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Eduge_SVM_baseline.html">Lab 15-16</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCS308_lab_23.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/CS308_lab_23.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab 2-3</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lab 2-3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cs308-2-3">CS308 Машин сургалт хичээлийн Лабораторийн ажил 2 болон 3 заавар</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-classifier">Linear Classifier</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-libraries">1. Importing Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-models">2. Building Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perceptron-algorithm">2.1 Perceptron algorithm:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Загваруудынхаа гүйцэтгэлийг шалгахын тулд алдагдлын функцийг тодорхойлъё.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Илүү сайжирсан байна!</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-perceptron">2.2 Average Perceptron:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pegasos-algorithm">2.3 Pegasos Algorithm:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Linear classifier Даалгавар</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression">3. Logistic regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Өгөгдлийн сан үүсгэх</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3. Logistic regression</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function">Loss function</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradiend-descent">Gradiend descent</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model">Training the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-loss-function">Plot the loss function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Таамаглалуудыг дэвшүүлэх</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Шийдвэрийн хязгаарыг дүрсэлж харвал</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">Sklearn хэрэгжүүлэлт</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Logistic regression Даалгавар</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">4. PCA Бууруулах арга</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">PCA Даалгавар</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-2-3">
+<h1>Lab 2-3<a class="headerlink" href="#lab-2-3" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="cs308-2-3">
+<h1>CS308 Машин сургалт хичээлийн Лабораторийн ажил 2 болон 3 заавар<a class="headerlink" href="#cs308-2-3" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Зааврыг уншиж None оронд кодыг бичиж үр дүнг гаргана уу.</p></li>
+<li><p>Бүлэг бүрийн ард нэмэлт даалгавар байгаа.</p></li>
+<li><p>Тайланд олон ангилалтай тохиолдолд шугаман ангилагч хэрхэн сургах талаар хэлэлцүүлэг, жишээний хамт бичнэ үү</p></li>
+</ol>
+<p>1 2 3 даалгавруудыг хийж гүйцэтгэсэн тохиолдолд бүрэн ажиллуулсан ipynb файлыг zip (заавал) өргөтгөлтэй хадгалан лабораторийн ажил илгээх гэсэн цахим хичээлийн хаягаар хугацаа хоцролгүй илгээнэ. Нэмэлт сан (+95mb) ашигласан тохиолдолд тухайн санг татаж оруулсан кодыг зөвхөн бичнэ үү. (санг zip-д оруулах шаардлагагүй)
+Хугацаа 4-р долоо хоног дуустал. (хугацаа хэтэрсэн өдрөөр -0.1 амралтын өдрүүд тооцохгүй)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="linear-classifier">
+<h1>Linear Classifier<a class="headerlink" href="#linear-classifier" title="Link to this heading">#</a></h1>
+<p>Бид үндсэн суурь төрлийн хэд хэдэн шугаман ангилагчид болох perceptron, дундаж perceptron болон Stochastic gradient аргуудыг судалж, тестийн өгөгдлийн үр дүнгүүдэд үзүүлсэн тэдний гүйцэтгэл дээр үндэслэн харьцуулах болно. Эдгээр аргууд нь нарийн төвөгтэй өгөгдөлд үр дүн муу боловч бага хэмжээний өгөгдөлд илүү сайн хурдан гүйцэтгэлийг үзүүлдэгээрээ давуу талтай юм.</p>
+<p>Эдгээр нь хоёртын ангилагчид бөгөөд бид тэдгээрийг хооронд нь ангилахын тулд <span class="math notranslate nohighlight">\(y \in \{1,-1\}\)</span> гэж ашиглах болно.</p>
+<section id="importing-libraries">
+<h2>1. Importing Libraries<a class="headerlink" href="#importing-libraries" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">pylab</span>
+<span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">punctuation</span><span class="p">,</span> <span class="n">digits</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_classification</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="building-models">
+<h2>2. Building Models<a class="headerlink" href="#building-models" title="Link to this heading">#</a></h2>
+<section id="perceptron-algorithm">
+<h3>2.1 Perceptron algorithm:<a class="headerlink" href="#perceptron-algorithm" title="Link to this heading">#</a></h3>
+<p>Perceptron алгоритм нь хиймэл мэдрэлийн сүлжээний хамгийн энгийн төрөл юм.</p>
+<p>Энэ нь хоёр ангит ангилалын асуудлуудад ашиглаж болох ганц нейронын загвар бөгөөд хожим нь илүү том сүлжээг хөгжүүлэх үндэс суурийг тавьж өгдөг.</p>
+<ul class="simple">
+<li><p>Загвар нь сургалтын өгөгдөл болон зарим тохиолдлын анхан шатны жинг (ихэвчлэн 0) оролт болгон авдаг.</p></li>
+<li><p>Дараа нь өгөгдлийн жишээ/мөр бүрээр явж, хэрэв буруу ангилах бол параметрүүдэд шинэчлэлт хийнэ.</p></li>
+<li><p>Жишээнүүдийг зөв ангилсан шугаман ангилагч байдаг бол perceptron алгоритм нь үүнийг гарцаагүй олох болно.</p></li>
+</ul>
+<p>Илүү ихийг эндээс: <a class="reference external" href="http://ciml.info/dl/v0_8/ciml-v0_8-ch03.pdf">http://ciml.info/dl/v0_8/ciml-v0_8-ch03.pdf</a></p>
+<p>ямар тохиолдолд буруу ангилсан байх:</p>
+<div class="math notranslate nohighlight">
+\[y^{(i)}(\theta.x^{(i)}+\theta_0)\leq 0 \]</div>
+<p>энд,</p>
+<p><span class="math notranslate nohighlight">\( x^{(i)} \)</span> оролтын вектор</p>
+<p><span class="math notranslate nohighlight">\(y^{(i)}\)</span> оролтын шошго</p>
+<p><span class="math notranslate nohighlight">\(\theta\)</span> болон <span class="math notranslate nohighlight">\(\theta_0\)</span> нь загварын параметрүүд</p>
+<p>Алгоритм буруу ангилсны дараа параметрүүдийг дараах дүрмийн дагуу шинэчилнэ:</p>
+<p>Хэрэв $<span class="math notranslate nohighlight">\(y^{(i)}(\theta.x^{(i)}+\theta_0)\leq 0 \)</span>$ эндээс</p>
+<div class="math notranslate nohighlight">
+\[\theta=\theta + y^{(i)} x^{(i)}\]</div>
+<div class="math notranslate nohighlight">
+\[\theta_0=\theta_0 + y^{(i)}\]</div>
+<p>Одоо бид эцсийн үр дүнгээ авахын тулд энэ алгоритмыг T epochs дээр ажиллуулах хэрэгтэй. Ингээд эхлүүлье.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">perceptron_single_step_update</span><span class="p">(</span><span class="n">feature_vector</span><span class="p">,</span><span class="n">label</span><span class="p">,</span><span class="n">current_theta</span><span class="p">,</span><span class="n">current_theta_0</span><span class="p">):</span>
+    
+    <span class="k">if</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">current_theta</span><span class="p">,</span><span class="n">feature_vector</span><span class="p">)</span><span class="o">+</span><span class="n">current_theta_0</span><span class="p">)</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">):</span> <span class="c1"># томъёо 1</span>
+        
+        <span class="n">current_theta</span><span class="o">=</span><span class="n">current_theta</span><span class="o">+</span><span class="n">label</span><span class="o">*</span><span class="n">feature_vector</span> <span class="c1"># томъёо 2</span>
+        <span class="n">current_theta_0</span><span class="o">=</span> <span class="n">current_theta_0</span><span class="o">+</span><span class="n">label</span> <span class="c1"># томъёо 3</span>
+        
+    <span class="k">return</span> <span class="p">(</span><span class="n">current_theta</span><span class="p">,</span><span class="n">current_theta_0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">perceptron</span><span class="p">(</span><span class="n">feature_matrix</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+
+    <span class="n">update</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">feature_matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">feature_matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+
+            <span class="n">update</span><span class="o">=</span><span class="n">perceptron_single_step_update</span><span class="p">(</span><span class="n">feature_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">update</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">update</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">return</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h4>Загваруудынхаа гүйцэтгэлийг шалгахын тулд алдагдлын функцийг тодорхойлъё.<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Хяналтын цэгүүд шийдвэрийн заагийг (үнэлэмжийн зааг) давах бүрт алдагдал болно. Үүнд:</p>
+<div class="math notranslate nohighlight">
+\[loss = 1-y^{(i)}(\theta.x^{(i)}+\theta_0) \]</div>
+<p>Мөн шугаман ангилагчаа түргэн дүрсжүүлэн харах функц юм.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hinge_loss_single</span><span class="p">(</span><span class="n">feature_vector</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">theta_0</span><span class="p">):</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">feature_vector</span><span class="p">)</span><span class="o">+</span><span class="n">theta_0</span> <span class="c1"># томъёо 1 хаалт</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">y</span> <span class="o">*</span> <span class="n">label</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">loss</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+    
+<span class="k">def</span> <span class="nf">hinge_loss_full</span><span class="p">(</span><span class="n">feature_matrix</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">theta_0</span><span class="p">):</span>
+
+    <span class="n">loss</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">vec</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">feature_matrix</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
+        <span class="n">loss</span><span class="o">=</span><span class="n">loss</span><span class="o">+</span><span class="n">hinge_loss_single</span><span class="p">(</span><span class="n">vec</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">theta_0</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="p">(</span><span class="n">loss</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
+ 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_classifier</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">theta_0</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span> <span class="c1"># to visualise our model</span>
+    <span class="n">good</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">good</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">good</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Classified True&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">~</span><span class="n">good</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="o">~</span><span class="n">good</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Classified False&#39;</span><span class="p">)</span>
+
+    <span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">()[:</span><span class="mi">2</span><span class="p">]</span>
+    
+    <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">theta_0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">1e-16</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Classifier&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Values of x1&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Values of x2&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Linear classifier for a 2-d feature vector&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;toy_data.tsv&quot;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">y</span><span class="p">,</span><span class="n">X</span><span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 200) (200,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="p">,</span><span class="n">theta_0</span><span class="o">=</span><span class="n">perceptron</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span><span class="n">y</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plot_classifier</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">theta_0</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average hinge loss for Perceptron algorithm is </span><span class="si">{</span><span class="n">hinge_loss_full</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span><span class="n">y</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">theta_0</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">theta_0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average hinge loss for Perceptron algorithm is 0.6729
+[2.358 1.796] -1.0
+</pre></div>
+</div>
+<img alt="_images/356f997e64f7f0dd98dd36f114d0c0bdbb1b9fb3b3558bf14847bc1c0efe5382.png" src="_images/356f997e64f7f0dd98dd36f114d0c0bdbb1b9fb3b3558bf14847bc1c0efe5382.png" />
+</div>
+</div>
+<div style='text-align: justify;'>
+Энд буруу ангилсан олон цэг байгаа учраас өндөр алдагдалтай байна. Үүнийг хэрхэн багасгах вэ?
+Энд авч үзэх ёстой нэг чухал зүйл бол шинэчлэлтүүдийг гүйцэтгэх дараалал юм. Бид зүгээр л алгоритмыг байнгын дарааллаар гүйлгэлж байна. Энэ нь сайн санаа биш юм. 
+<p>500 эерэг, 500 сөрөг жишээнээс бүрдсэн өгөгдлийн багц дээр perceptron алгоритм юу хийхийг авч үзье гэж бодвол. Эхний хэдэн эерэг жишээг (магадгүй тав) харсны дараа жишээ бүр эерэг гэдгийг шийдэж, юу ч сурахаа болино. Энэ нь хэсэг хугацаанд (дараагийн 495 жишээ) сөрөг жишээнүүдийг орж ирэх хүртэл сайн байх болно. Дараа нь бүх зүйлийг сөрөг гэж урьдчилан таамаглаж эхлэхэд хэсэг хугацаа (магадгүй арван жишээ) шаардагдана. Нэг өгөгдөл дамжуулах нэг төгсгөлд энэ нь үнэхээр цөөхөн жишээнээс л суралцах байсан (энэ тохиолдолд арван тав).</p>
+<p>Тиймээс, өмнөх жишээнээс сургамж авч, epoch бүрийн өмнө оролтын өгөгдлийн дарааллыг дахин холих буюу өөр өөрөөр авч үзэх хэрэгтэй.</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_order</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n_samples</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)))</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">indices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">))</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">indices</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">perceptron_stochaistic</span><span class="p">(</span><span class="n">feature_matrix</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+
+    <span class="n">update</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">feature_matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">get_order</span><span class="p">(</span><span class="n">feature_matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">update</span><span class="o">=</span><span class="n">perceptron_single_step_update</span><span class="p">(</span><span class="n">feature_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">update</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">update</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Одоо илүү сайн хийсэн эсэхээ харцгаая!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="p">,</span><span class="n">theta_0</span><span class="o">=</span><span class="n">perceptron_stochaistic</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span><span class="n">y</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plot_classifier</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">theta_0</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average hinge loss for Perceptron algorithm is </span><span class="si">{</span><span class="n">hinge_loss_full</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span><span class="n">y</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">theta_0</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">theta_0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average hinge loss for Perceptron algorithm is 0.3388
+[2.7345 3.342 ] -5.0
+</pre></div>
+</div>
+<img alt="_images/4d7a1f2d1bfa250346aee97a4a3d3fa171abf7b725c36b65bcd74f0b9cd2eaae.png" src="_images/4d7a1f2d1bfa250346aee97a4a3d3fa171abf7b725c36b65bcd74f0b9cd2eaae.png" />
+</div>
+</div>
+</section>
+<section id="id2">
+<h4>Илүү сайжирсан байна!<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Алдагдал нь 0.3388 хүртэл буурсан байна. Учир нь одоо ч буруу ангилсаар байгаа хэд хэдэн зайлшгүй цэг байгаа юм.</p>
+</section>
+</section>
+<section id="average-perceptron">
+<h3>2.2 Average Perceptron:<a class="headerlink" href="#average-perceptron" title="Link to this heading">#</a></h3>
+<p>Одоо дундаж perceptron алгоритм руу шилжье.</p>
+<p>Дундаж перцептрон нь анхны perceptron алгоритмд өөрчлөлт оруулах болно. Алгоритмыг ажиллуулах үед үндсэн алгоритм нь шинэчлэгдсээр байгаа тул магадгүй зөрчилтэй чиглэлд параметрүүдийг нугалсан тул тэдгээр параметрүүдийн дундажыг эцсийн хариулт болгон авсан нь дээр. Алгоритмын шинэчлэлт бүр өмнөхтэй адил байна. Буцаасан параметрүүд θ , гэсэн хэдий ч, n алхмуудын дунджаар θ тодорхойлогдож байна:</p>
+<div class="math notranslate nohighlight">
+\[\theta_{final}=\frac{1}{n}(\theta^{(1)}+\theta^{(2)}+\theta^{(3)}+...+\theta^{(n)}) \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">avg_perceptron</span><span class="p">(</span><span class="n">feature_matrix</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+    <span class="n">update</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">feature_matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="mi">0</span><span class="p">)</span> 
+    <span class="n">theta_sum</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">update</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">theta_0_sum</span><span class="o">=</span><span class="n">update</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">get_order</span><span class="p">(</span><span class="n">feature_matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">update</span><span class="o">=</span><span class="n">perceptron_single_step_update</span><span class="p">(</span><span class="n">feature_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">update</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">update</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">theta_sum</span><span class="o">=</span><span class="kc">None</span> <span class="c1"># theta + theta_sum</span>
+            <span class="n">theta_0_sum</span><span class="o">=</span><span class="kc">None</span> <span class="c1"># theta_0 + theta_0_sum</span>
+            <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span>
+            
+    <span class="n">avg_theta</span><span class="o">=</span><span class="n">theta_sum</span><span class="o">/</span><span class="n">count</span>
+    <span class="n">avg_theta_0</span><span class="o">=</span><span class="n">theta_0_sum</span><span class="o">/</span><span class="n">count</span>
+    
+    <span class="k">return</span> <span class="p">(</span><span class="n">avg_theta</span><span class="p">,</span><span class="n">avg_theta_0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="p">,</span><span class="n">theta_0</span><span class="o">=</span><span class="n">avg_perceptron</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span><span class="n">y</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plot_classifier</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">theta_0</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average hinge loss for Perceptron algorithm is </span><span class="si">{</span><span class="n">hinge_loss_full</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span><span class="n">y</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">theta_0</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">theta_0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average hinge loss for Perceptron algorithm is 0.2766
+[2.270698 2.556028] -4.608
+</pre></div>
+</div>
+<img alt="_images/36302f44e73ace9af4db5589a0f8300eb5d0f2d19cb552c77b61f370ae31f6c7.png" src="_images/36302f44e73ace9af4db5589a0f8300eb5d0f2d19cb552c77b61f370ae31f6c7.png" />
+</div>
+</div>
+<p>За тэгэхээр бид парамаметрүүдийг дунджаар гаргаснаар алдагдлыг улам багасгаж чадна. Гэхдээ бүх юм үргэлж тийм энгийн байдаггүй.</p>
+<div class="math notranslate nohighlight">
+\[ Everything\:  should  \:be\: made\: as\: simple\: as\: possible,\: but\: no\: simpler.\: -\: Albert\: Einstein\]</div>
+</section>
+<section id="pegasos-algorithm">
+<h3>2.3 Pegasos Algorithm:<a class="headerlink" href="#pegasos-algorithm" title="Link to this heading">#</a></h3>
+<p>Pegasos алгоритм нь энгийн стохастик градиент зохистой. Энд байгаа зорилго нь зардлын үйл ажиллагааг багасгах явдал юм.
+Зардлын функц нь хоёр зүйлийн нийлбэр юм. Үүнд:</p>
+<ul class="simple">
+<li><p>Loss function: Хажуугийн хил рүү хальтирсан цэгүүдээс болж гарсан алдагдлыг тодорхойлно.</p></li>
+<li><p>Regularisation: Энэ нь бат бөх загвартай байхын тулд захын хил хязгаарыг шийдвэрийн хил хязгаараас аль болох хол байлгахыг хичээдэг.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ J(\theta,\theta_0)\: =\: \frac{1}{n} \sum{\underbrace{loss_h (y^{(i)}(\theta.x^{(i)}+\theta_0))}_{Hinge\: loss}\: +\:\underbrace{\frac{\lambda}{2}\parallel{\theta}\:\parallel}_{Regularisation}}  \]</div>
+<ul class="simple">
+<li><p>Параметрүүдийг шинэчлэхийн тулд хуучин параметрүүд нь зардлын функцийн уламжлалын сөрөг чиглэлд хэлбэлздэг. Энэ нь дамжуулалт бүрт бид <span class="math notranslate nohighlight">\(\nabla J(\theta,\theta_0)\)</span> хамгийн бага үнэ цэнэ рүү аваачдаг</p></li>
+<li><p>Perceptron-аас ялгаатай нь SGD алхам бүрт шинэчлэлт хийнэ. Хэдийгээр алдагдал гараагүй ч гэсэн тогтмол болгох нэр томьёоны оролцооны улмаас өөрчлөлт гарна.</p></li>
+<li><p>Бид бас бодит үйл ажиллагааны үнэ цэнэ ижил эсвэл бүр түүнээс ч өндөр хаа нэгтээ аваачиж болох хэт том алхмуудыг хийхгүй байхын тулд алхмын хэмжээ (эсвэл суралцах хурд) оруулах болно.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pegasos_single_step_update</span><span class="p">(</span><span class="n">feature_vector</span><span class="p">,</span><span class="n">label</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">eta</span><span class="p">,</span><span class="n">current_theta</span><span class="p">,</span><span class="n">current_theta_0</span><span class="p">):</span>
+    
+    <span class="k">if</span><span class="p">(</span><span class="kc">None</span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># loss_h</span>
+        <span class="n">current_theta</span><span class="o">=</span><span class="n">current_theta</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">eta</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">+</span><span class="n">eta</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">label</span><span class="p">,</span><span class="n">feature_vector</span><span class="p">)</span>
+        <span class="n">current_theta_0</span><span class="o">=</span><span class="n">current_theta_0</span><span class="o">+</span><span class="n">eta</span><span class="o">*</span><span class="n">label</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">current_theta</span><span class="o">=</span><span class="n">current_theta</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">eta</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="p">(</span><span class="n">current_theta</span><span class="p">,</span><span class="n">current_theta_0</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">pegasos</span><span class="p">(</span><span class="n">feature_matrix</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">L</span><span class="p">):</span>
+
+    <span class="n">update</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">feature_matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#why not just theta and theta zero</span>
+    <span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">get_order</span><span class="p">(</span><span class="n">feature_matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span>
+            <span class="n">eta</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+            
+            <span class="n">update</span><span class="o">=</span><span class="n">pegasos_single_step_update</span><span class="p">(</span><span class="n">feature_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">L</span><span class="p">,</span><span class="n">eta</span><span class="p">,</span><span class="n">update</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">update</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>        
+    <span class="k">return</span> <span class="n">update</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="p">,</span><span class="n">theta_0</span><span class="o">=</span><span class="n">pegasos</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span><span class="n">y</span><span class="p">,</span><span class="n">T</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">L</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plot_classifier</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">theta_0</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average hinge loss for Pegasos algorithm is </span><span class="si">{</span><span class="n">hinge_loss_full</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span><span class="n">y</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">theta_0</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average hinge loss for Pegasos algorithm is 0.2509
+</pre></div>
+</div>
+<img alt="_images/1fcb8894b06a41c080c95c8974d31dc8a488943c48ba93b25f44f957d6e1a614.png" src="_images/1fcb8894b06a41c080c95c8974d31dc8a488943c48ba93b25f44f957d6e1a614.png" />
+</div>
+</div>
+</section>
+<section id="id3">
+<h3>Linear classifier Даалгавар<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>titanic санг ашиглан сургалт хийн үр дүнг дүгнэж бичнэ үү</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="logistic-regression">
+<h1>3. Logistic regression<a class="headerlink" href="#logistic-regression" title="Link to this heading">#</a></h1>
+<p>Энд логистик регресс хэрхэн ажилладаг талаар тайлбарлаж, энгийн Numpy дээр хэрэгжүүлнэ.
+Логистик регресс нь хяналттай сургалтын ангиллын алгоритм бөгөөд энэ нь ангиллыг тооцоолох боломжтой гэсэн үг юм.
+label-тэй ажиглалт дээр үндэслэсэн шинэ ажиглалт хийж шалгах дасгал ажил.</p>
+<section id="id4">
+<h2>Өгөгдлийн сан үүсгэх<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>Зөвхөн 100 ажиглалт, 2 онцлог бүхий хоёртын ангиллын бодлогод логистик регрессийг хэрэглэе.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span>
+        <span class="n">n_samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> 
+        <span class="n">n_features</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">n_redundant</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">n_informative</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+        <span class="n">n_clusters_per_class</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c1"># X=X.transpose()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(200, 2) (200,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">s</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$X_1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$X_2$&quot;</span><span class="p">)</span>
+<span class="c1"># blue dots = 1, red dots = 0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$X_2$&#39;)
+</pre></div>
+</div>
+<img alt="_images/56cf078b60cc0e0b187bfed7d83149a1add2ac27e6444a0a95a4237ac1caab1e.png" src="_images/56cf078b60cc0e0b187bfed7d83149a1add2ac27e6444a0a95a4237ac1caab1e.png" />
+</div>
+</div>
+<p>Бидэнд <span class="math notranslate nohighlight">\(X\)</span> 2 feature-тэй <span class="math notranslate nohighlight">\(\theta\)</span> гэсэн 100 ажиглалт байгаа бөгөөд тэдгээрийн <span class="math notranslate nohighlight">\(y\)</span> label-ийг бид мэднэ. Бид шинэ ажиглалтын label-ийг таамаглах боломжтой юу?</p>
+</section>
+<section id="id5">
+<h2>3. Logistic regression<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>Логистик регресс нь ажиглалт тодорхой ангилалд хамаарах магадлалыг загварчилдаг.
+Эдгээр магадлалыг үүсгэхийн тулд логистик регресс нь <strong>sigmoid</strong> функцийг ашигладаг. Энэ функц нь бодит тоог 0-ээс 1-ийн хоорондох утгуудад буулгадаг.</p>
+<p>\begin{equation}
+g(z) = \frac{1}{1+e^{-z}}
+\end{equation}</p>
+<p>Дараах байдлаар таамаглалыг тодорхойлж болно <span class="math notranslate nohighlight">\(h(X) = g(X \theta)\)</span>
+энд</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span> коэффициэнт вектор.</p></li>
+<li><p><span class="math notranslate nohighlight">\(X\)</span> нь бүх ажиглалтын вектор юм.</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(h(X)\)</span> бидэнд 1 хүртэлх таамаглал өгнө,</p>
+<ul class="simple">
+<li><p>хэрэв <span class="math notranslate nohighlight">\( X \theta \geqslant 0 \)</span>, бол <span class="math notranslate nohighlight">\(h(X) \geqslant 0.5\)</span>, таамаглал <span class="math notranslate nohighlight">\(y = 1\)</span></p></li>
+<li><p>хэрэв <span class="math notranslate nohighlight">\( X \theta &lt; 0 \)</span>, бол <span class="math notranslate nohighlight">\(h(X) &lt; 0.5\)</span>, таамаглал <span class="math notranslate nohighlight">\(y = 0\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_intercept</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="n">intercept</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">intercept</span><span class="p">,</span> <span class="n">X</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="k">return</span> <span class="kc">None</span> <span class="c1"># томъёо 1</span>
+
+<span class="k">def</span> <span class="nf">calc_h</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">h</span>
+
+<span class="n">XX</span> <span class="o">=</span> <span class="n">add_intercept</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">XX</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">calc_h</span><span class="p">(</span><span class="n">XX</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">XX</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.00000000e+00  6.17010831e-01 -1.19399527e+00]
+ [ 1.00000000e+00  5.74173999e-02 -5.72398146e-01]
+ [ 1.00000000e+00 -5.58915168e-01  7.55356227e-01]
+ [ 1.00000000e+00  3.68073023e-01  6.15571203e-02]
+ [ 1.00000000e+00  2.32747048e+00 -2.92856890e+00]
+ [ 1.00000000e+00 -1.36575239e-02  1.33941322e-02]
+ [ 1.00000000e+00  9.76010042e-01 -2.88595509e-01]
+ [ 1.00000000e+00  1.16015480e+00  1.53217800e+00]
+ [ 1.00000000e+00 -1.10808024e+00  1.34874056e+00]
+ [ 1.00000000e+00 -4.23038156e-01 -3.35160744e-01]
+ [ 1.00000000e+00  7.17691503e-01 -8.84913923e-02]
+ [ 1.00000000e+00  1.01966758e+00  8.91208862e-01]
+ [ 1.00000000e+00  7.61860774e-01  3.32491195e-01]
+ [ 1.00000000e+00  1.31601904e+00  2.24730790e+00]
+ [ 1.00000000e+00 -1.83659331e+00 -1.77175130e+00]
+ [ 1.00000000e+00 -2.33251139e+00 -2.44662001e+00]
+ [ 1.00000000e+00  1.29460011e+00  1.96406525e+00]
+ [ 1.00000000e+00  5.69506693e-01 -1.68811299e+00]
+ [ 1.00000000e+00  1.96705457e+00 -2.77545112e+00]
+ [ 1.00000000e+00  1.23891237e+00 -9.20088682e-01]
+ [ 1.00000000e+00 -1.50967356e+00 -1.75908066e+00]
+ [ 1.00000000e+00 -1.16873142e+00 -9.01246351e-01]
+ [ 1.00000000e+00 -8.92532000e-01  1.58370072e+00]
+ [ 1.00000000e+00 -5.37082036e-01  6.21804377e-01]
+ [ 1.00000000e+00 -3.32120909e-02 -1.21002351e+00]
+ [ 1.00000000e+00 -6.50390876e-01 -1.22541697e-01]
+ [ 1.00000000e+00  1.56145399e+00 -1.57389739e+00]
+ [ 1.00000000e+00 -5.54241356e-01  2.52036510e+00]
+ [ 1.00000000e+00 -1.17090821e+00 -8.53642031e-01]
+ [ 1.00000000e+00 -5.85873893e-01  1.41575139e+00]
+ [ 1.00000000e+00 -6.75577303e-01  1.03990851e+00]
+ [ 1.00000000e+00  3.89777067e-01 -7.87723632e-01]
+ [ 1.00000000e+00 -8.58761593e-01 -7.96339016e-01]
+ [ 1.00000000e+00  1.05908697e+00 -4.22330394e-01]
+ [ 1.00000000e+00 -1.98310010e+00  1.62966784e+00]
+ [ 1.00000000e+00 -1.61877833e+00  4.51985461e-01]
+ [ 1.00000000e+00 -1.21756493e+00  1.11259788e+00]
+ [ 1.00000000e+00  1.51155771e+00  2.71976337e+00]
+ [ 1.00000000e+00 -3.70819828e-01 -1.38664680e+00]
+ [ 1.00000000e+00  5.48346747e-02 -3.31170559e-01]
+ [ 1.00000000e+00  1.40543798e+00  2.29297236e+00]
+ [ 1.00000000e+00 -1.10665829e+00 -8.77975236e-01]
+ [ 1.00000000e+00 -5.10525757e-01  1.55971154e+00]
+ [ 1.00000000e+00  1.25998947e+00  3.12475194e+00]
+ [ 1.00000000e+00 -1.16334217e+00 -6.90132579e-01]
+ [ 1.00000000e+00 -3.12808713e+00 -5.97342357e-01]
+ [ 1.00000000e+00 -4.75471361e-01  1.48569210e+00]
+ [ 1.00000000e+00  5.43305207e-02  5.59798188e-01]
+ [ 1.00000000e+00 -1.22374493e+00  5.06952663e-01]
+ [ 1.00000000e+00  7.87101626e-01 -2.22300657e+00]
+ [ 1.00000000e+00  8.35240266e-01  4.89540808e-01]
+ [ 1.00000000e+00 -1.32866819e-01  1.25189622e-01]
+ [ 1.00000000e+00  1.01100579e+00 -1.70628581e+00]
+ [ 1.00000000e+00 -1.74692401e+00 -1.48581363e+00]
+ [ 1.00000000e+00 -5.59176543e-03  1.20324101e+00]
+ [ 1.00000000e+00  7.00418575e-01 -7.93115752e-01]
+ [ 1.00000000e+00 -1.12513265e+00  2.13915956e+00]
+ [ 1.00000000e+00 -1.13300321e+00 -1.38481017e+00]
+ [ 1.00000000e+00 -3.25189696e-01 -7.78663449e-01]
+ [ 1.00000000e+00  8.65324548e-01 -3.33876311e-01]
+ [ 1.00000000e+00 -1.17306782e+00  1.60312264e+00]
+ [ 1.00000000e+00  8.94955460e-01  8.03610148e-01]
+ [ 1.00000000e+00 -4.77546194e-01 -1.30223846e+00]
+ [ 1.00000000e+00  3.53751500e-01 -3.13492873e-01]
+ [ 1.00000000e+00 -2.29731631e+00 -2.10767784e+00]
+ [ 1.00000000e+00  6.38265221e-01 -5.09378711e-01]
+ [ 1.00000000e+00 -1.24615674e+00  1.58880529e+00]
+ [ 1.00000000e+00  7.81107681e-01  1.92375519e-01]
+ [ 1.00000000e+00  1.17119407e+00  1.62872511e+00]
+ [ 1.00000000e+00 -5.76912729e-01 -9.61254147e-01]
+ [ 1.00000000e+00  1.20532777e+00 -1.05621573e+00]
+ [ 1.00000000e+00 -1.25499858e+00 -1.90001073e+00]
+ [ 1.00000000e+00 -1.61098909e+00 -1.22626453e+00]
+ [ 1.00000000e+00  1.44197454e+00  2.62028381e+00]
+ [ 1.00000000e+00 -2.82170492e+00 -2.85214369e+00]
+ [ 1.00000000e+00 -1.05384644e+00  2.37147679e+00]
+ [ 1.00000000e+00  7.33874440e-01 -1.21901138e+00]
+ [ 1.00000000e+00  4.79417536e-01 -7.89979093e-01]
+ [ 1.00000000e+00 -2.22129744e+00 -1.17427188e+00]
+ [ 1.00000000e+00  3.19292607e-01 -1.01754082e+00]
+ [ 1.00000000e+00 -1.16392127e+00  1.61824401e+00]
+ [ 1.00000000e+00 -5.32742008e-01  9.39419543e-01]
+ [ 1.00000000e+00 -1.05875663e+00  4.89770127e-01]
+ [ 1.00000000e+00  2.17780329e+00 -2.86979566e+00]
+ [ 1.00000000e+00 -1.62863736e+00 -1.95404989e+00]
+ [ 1.00000000e+00  1.12106873e+00 -1.81279677e+00]
+ [ 1.00000000e+00  9.63377217e-01  7.46095705e-01]
+ [ 1.00000000e+00 -1.04875730e+00  1.57336653e+00]
+ [ 1.00000000e+00  1.23369615e+00  1.51768107e+00]
+ [ 1.00000000e+00 -1.64679047e+00 -1.47882824e+00]
+ [ 1.00000000e+00  6.24211555e-01 -9.99319266e-01]
+ [ 1.00000000e+00 -1.36091238e+00 -1.24633024e+00]
+ [ 1.00000000e+00 -1.14866062e+00 -1.40623980e+00]
+ [ 1.00000000e+00  5.75440211e-01  2.60883749e-01]
+ [ 1.00000000e+00  1.42836109e+00 -2.22012573e+00]
+ [ 1.00000000e+00 -6.55894071e-01 -7.94355325e-01]
+ [ 1.00000000e+00  1.28676539e+00  2.03138591e+00]
+ [ 1.00000000e+00  1.09823888e+00  1.30756012e+00]
+ [ 1.00000000e+00  1.56089682e+00 -1.69107406e+00]
+ [ 1.00000000e+00 -2.33623320e+00  1.20177941e+00]
+ [ 1.00000000e+00 -8.43840563e-01  8.60141614e-01]
+ [ 1.00000000e+00 -1.30573159e+00  8.40782383e-01]
+ [ 1.00000000e+00 -1.15414133e+00  7.18494831e-01]
+ [ 1.00000000e+00  9.52293394e-01  8.59772374e-01]
+ [ 1.00000000e+00  9.41712865e-01  5.54081410e-01]
+ [ 1.00000000e+00  9.19720829e-01  5.82218629e-01]
+ [ 1.00000000e+00 -1.73375070e+00 -1.11470210e+00]
+ [ 1.00000000e+00 -2.03087245e+00  1.71097793e+00]
+ [ 1.00000000e+00  1.49716540e+00  2.96791206e+00]
+ [ 1.00000000e+00  4.55749402e-01 -1.01517253e+00]
+ [ 1.00000000e+00  1.59633238e+00  2.99524735e+00]
+ [ 1.00000000e+00  4.73269589e-01  1.77497081e+00]
+ [ 1.00000000e+00 -3.81993089e-01 -6.82242729e-02]
+ [ 1.00000000e+00  1.86661250e+00 -2.12921033e+00]
+ [ 1.00000000e+00  1.25985810e+00  1.71458589e+00]
+ [ 1.00000000e+00 -8.87446964e-01 -1.14433187e+00]
+ [ 1.00000000e+00  3.73916249e-01  6.58025267e-02]
+ [ 1.00000000e+00  1.50191025e+00 -1.14548526e+00]
+ [ 1.00000000e+00  1.30645572e+00 -1.08881282e+00]
+ [ 1.00000000e+00  1.75041600e+00 -2.61569732e+00]
+ [ 1.00000000e+00 -1.05980660e+00 -7.29882784e-01]
+ [ 1.00000000e+00 -2.52807564e+00  2.71207533e-01]
+ [ 1.00000000e+00 -1.07429935e+00 -7.53513958e-01]
+ [ 1.00000000e+00  1.22879975e+00  1.62221217e+00]
+ [ 1.00000000e+00  1.97052019e+00 -2.51431305e+00]
+ [ 1.00000000e+00 -7.26830703e-01 -4.23000775e-02]
+ [ 1.00000000e+00 -1.41560141e+00 -1.61404831e+00]
+ [ 1.00000000e+00  1.18836572e+00  2.01259818e+00]
+ [ 1.00000000e+00  1.64869103e+00  3.20938004e+00]
+ [ 1.00000000e+00 -3.44230027e+00  4.37911380e-01]
+ [ 1.00000000e+00  3.51204001e-01 -3.76704117e-01]
+ [ 1.00000000e+00 -1.61686816e+00  9.78867729e-01]
+ [ 1.00000000e+00 -7.66081508e-02  4.00568546e-01]
+ [ 1.00000000e+00  6.22098248e-01 -2.06673554e+00]
+ [ 1.00000000e+00  6.85901243e-01  8.44334340e-02]
+ [ 1.00000000e+00 -5.89571561e-01  3.61796982e-01]
+ [ 1.00000000e+00 -4.60822094e-02  2.18566274e+00]
+ [ 1.00000000e+00 -6.73346917e-01 -4.46245517e-01]
+ [ 1.00000000e+00  1.37771780e+00 -6.81280204e-01]
+ [ 1.00000000e+00  1.37338041e+00  1.96608145e+00]
+ [ 1.00000000e+00 -8.38607914e-01  1.31193271e+00]
+ [ 1.00000000e+00  9.60334063e-01  5.35628219e-01]
+ [ 1.00000000e+00  1.51423052e+00  2.54443891e+00]
+ [ 1.00000000e+00 -7.71263773e-01 -7.39568071e-01]
+ [ 1.00000000e+00 -2.31262450e+00 -1.81631471e+00]
+ [ 1.00000000e+00  8.35647189e-01  6.81173263e-01]
+ [ 1.00000000e+00  1.67491159e+00  3.37667224e+00]
+ [ 1.00000000e+00 -7.35284165e-01 -9.33202298e-01]
+ [ 1.00000000e+00  1.30937507e+00  2.60637303e+00]
+ [ 1.00000000e+00 -3.47570889e-01  2.91727769e+00]
+ [ 1.00000000e+00 -1.04866213e+00  1.91974082e+00]
+ [ 1.00000000e+00  1.67421778e+00 -1.36384111e+00]
+ [ 1.00000000e+00  7.63679698e-01 -3.85243017e-01]
+ [ 1.00000000e+00  1.73621152e+00 -1.73072558e+00]
+ [ 1.00000000e+00  6.06282821e-01 -1.72724068e-02]
+ [ 1.00000000e+00  1.04270199e+00  1.22622691e+00]
+ [ 1.00000000e+00  3.44389870e-01  1.03272882e+00]
+ [ 1.00000000e+00  1.38773819e-01  3.58585106e-03]
+ [ 1.00000000e+00  1.22719886e+00  1.49146366e+00]
+ [ 1.00000000e+00 -1.74506451e+00 -8.81728686e-01]
+ [ 1.00000000e+00  5.60645038e-02  1.13046022e-01]
+ [ 1.00000000e+00 -2.48156329e+00 -1.33232792e+00]
+ [ 1.00000000e+00 -1.15646057e+00 -1.09298400e+00]
+ [ 1.00000000e+00  5.23114971e-01 -7.71615202e-01]
+ [ 1.00000000e+00  1.45404672e+00 -1.77734317e+00]
+ [ 1.00000000e+00 -6.66200729e-01 -8.32387640e-01]
+ [ 1.00000000e+00  1.19470458e+00 -1.58207081e+00]
+ [ 1.00000000e+00 -7.91643886e-01 -9.32638517e-01]
+ [ 1.00000000e+00  2.88641879e-01  2.10274160e+00]
+ [ 1.00000000e+00  9.20200316e-01  5.46339858e-01]
+ [ 1.00000000e+00  1.74616896e+00  3.82462886e+00]
+ [ 1.00000000e+00  1.88777639e+00 -1.90035319e+00]
+ [ 1.00000000e+00 -1.10567780e+00  1.90451048e+00]
+ [ 1.00000000e+00  5.25686176e-01  9.40266871e-02]
+ [ 1.00000000e+00 -3.85385342e-01  4.30764090e-01]
+ [ 1.00000000e+00 -8.16213578e-02  2.59525687e+00]
+ [ 1.00000000e+00  1.19753240e+00  2.02571498e+00]
+ [ 1.00000000e+00  8.67422492e-01  4.22971536e-01]
+ [ 1.00000000e+00  1.01981526e+00  6.94578830e-01]
+ [ 1.00000000e+00  1.83294211e+00 -1.54309192e+00]
+ [ 1.00000000e+00  2.02814856e+00 -2.85635843e+00]
+ [ 1.00000000e+00 -9.63966761e-01  1.23546903e-01]
+ [ 1.00000000e+00  3.04035987e-01  7.37044372e-01]
+ [ 1.00000000e+00  1.01927752e+00  1.15033347e+00]
+ [ 1.00000000e+00 -1.10598532e-01  1.17110410e+00]
+ [ 1.00000000e+00  1.95995333e+00 -2.02176141e+00]
+ [ 1.00000000e+00 -7.62232192e-01 -9.58146028e-01]
+ [ 1.00000000e+00  1.57531650e+00  2.82804219e+00]
+ [ 1.00000000e+00  1.31451132e+00 -6.88893554e-01]
+ [ 1.00000000e+00 -2.05188757e+00 -1.12860825e+00]
+ [ 1.00000000e+00  8.79228690e-01 -1.32409336e+00]
+ [ 1.00000000e+00  7.23834653e-01  4.95171044e-01]
+ [ 1.00000000e+00  1.04537022e+00  1.15268336e+00]
+ [ 1.00000000e+00  6.61787429e-01 -7.53928448e-01]
+ [ 1.00000000e+00  1.23633363e+00  1.74411756e+00]
+ [ 1.00000000e+00  1.39128097e+00  2.36426312e+00]
+ [ 1.00000000e+00  7.84849780e-01  3.63983072e-01]
+ [ 1.00000000e+00 -1.59399371e+00  1.97584740e-01]
+ [ 1.00000000e+00  3.61601258e-01 -1.67918407e+00]
+ [ 1.00000000e+00  5.21402711e-02  5.14403064e-03]]
+[0. 0. 0.]
+[0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+ 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+ 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+ 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+ 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+ 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+ 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+ 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+ 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+ 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+ 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+ 0.5 0.5]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="loss-function">
+<h1>Loss function<a class="headerlink" href="#loss-function" title="Link to this heading">#</a></h1>
+<p>loss функцийг дараах байдалтай тодорхойлно,
+\begin{equation}
+J(\theta) = \frac{1}{m}(-y \log(h) - (1 - y) \log(1 - h))
+\end{equation}
+энд <span class="math notranslate nohighlight">\(m\)</span> жишээний тоо.</p>
+<p>алдааг буруу ангилсан тохиолдлын жишээ,</p>
+<ul class="simple">
+<li><p>хэрэв <span class="math notranslate nohighlight">\(y=0\)</span> болон <span class="math notranslate nohighlight">\(h\rightarrow 1\)</span>, тэгвэл <span class="math notranslate nohighlight">\(J(\theta)\rightarrow ∞\)</span>  (хүчтэй алдаа)</p></li>
+<li><p>хэрэв <span class="math notranslate nohighlight">\(y=0\)</span> болон <span class="math notranslate nohighlight">\(h\rightarrow 0\)</span>, тэгвэл <span class="math notranslate nohighlight">\(J(\theta)\rightarrow 0\)</span>  (бага алдаа)</p></li>
+<li><p>хэрэв <span class="math notranslate nohighlight">\(y=1\)</span> болон <span class="math notranslate nohighlight">\(h\rightarrow 0\)</span>, тэгвэл <span class="math notranslate nohighlight">\(J(\theta)\rightarrow ∞\)</span>  (хүчтэй алдаа)</p></li>
+<li><p>хэрэв <span class="math notranslate nohighlight">\(y=1\)</span> болон <span class="math notranslate nohighlight">\(h\rightarrow 1\)</span>, тэгвэл <span class="math notranslate nohighlight">\(J(\theta)\rightarrow 0\)</span>  (бага алдаа)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#алдааг тодорхойлох</span>
+<span class="n">cost</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6931471805599452
+</pre></div>
+</div>
+</div>
+</div>
+<section id="gradiend-descent">
+<h2>Gradiend descent<a class="headerlink" href="#gradiend-descent" title="Link to this heading">#</a></h2>
+<p>Таамаглалыг сайжруулахын тулд, бид алдааны <span class="math notranslate nohighlight">\(J(\theta)\)</span> утгыг багасгах шаардлагатай. Үүнийг <span class="math notranslate nohighlight">\(\theta\)</span> утгыг тохируулах замаар гүйцэтгэнэ. Энэ нь алдааны функцээс уламжлал авч <span class="math notranslate nohighlight">\(\theta\)</span> бүрийг тохируулснаар хийгдэнэ. Градиент нь хэр их алдаа хэр хэмжээгээр коэффициэнтийг өөрлөхийг илэрхийлнэ. Энэ аргыг <em>Gradient Descent</em> гэдэг.
+\begin{equation}
+\theta_j := \theta_j - \alpha \frac{\partial J(\theta)}{\partial \theta_j}
+\end{equation}
+энд <span class="math notranslate nohighlight">\(\alpha\)</span> бол сурах хурд.</p>
+<p>Ингэснээр бид
+\begin{equation}
+\frac{\partial J(\theta)}{\partial \theta_j} = \frac{1}{m} X^T (h - y)
+\end{equation}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">size</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+<span class="n">gradient</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># томъёо 2</span>
+<span class="n">theta</span> <span class="o">-=</span> <span class="kc">None</span> <span class="c1"># томъёо 1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">gradient</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.         -0.51369123 -0.00744698]
+[0.00000000e+00 5.13691229e-03 7.44697744e-05]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="training-the-model">
+<h2>Training the model<a class="headerlink" href="#training-the-model" title="Link to this heading">#</a></h2>
+<p>Бид дээрх алхамыг коэффициент тохиртол давтан хийх хэрэгтэй.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_iter</span> <span class="o">=</span> <span class="mi">50000</span>
+<span class="n">cost_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_iter</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">calc_h</span><span class="p">(</span><span class="n">XX</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">cost_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
+    
+    <span class="n">gradient</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">theta</span> <span class="o">-=</span> <span class="kc">None</span>
+
+
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">10000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cost: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cost</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Adjusted coefficient: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cost: 0.6905129414329346
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cost: 0.1376274679857761
+Cost: 0.1323598899646972
+Cost: 0.13119759138873913
+Cost: 0.13084909560333202
+Adjusted coefficient: [-1.24551419  5.30677291 -1.00889134]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-the-loss-function">
+<h2>Plot the loss function<a class="headerlink" href="#plot-the-loss-function" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num_iter</span><span class="p">),</span> <span class="n">cost_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa09dd368b0&gt;]
+</pre></div>
+</div>
+<img alt="_images/858140b9a3e8f902881628ef77f6c96e2894de4357e112f383a64b1a08b9517b.png" src="_images/858140b9a3e8f902881628ef77f6c96e2894de4357e112f383a64b1a08b9517b.png" />
+</div>
+</div>
+<p>Алдааны утга багасах нь сургалт амжилттай явагдаж буйн илрэл юм.</p>
+</section>
+<section id="id6">
+<h2>Таамаглалуудыг дэвшүүлэх<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>Бид таамаглалын магадлалуудыг sigmoid функц авч гаргана.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">preds_prob</span> <span class="o">=</span> <span class="n">calc_h</span><span class="p">(</span><span class="n">XX</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">preds_prob</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9.62073241e-01 4.10154782e-01 6.87051206e-03 6.56032085e-01
+ 9.99999217e-01 2.08910564e-01 9.85587059e-01 9.66604323e-01
+ 2.06175409e-04 4.09991414e-02 9.34158134e-01 9.63261412e-01
+ 9.21438946e-01 9.69851579e-01 1.00586363e-04 1.42998285e-05
+ 9.74496524e-01 9.70109002e-01 9.99993815e-01 9.98087409e-01
+ 5.62651280e-04 1.44464379e-03 5.10422714e-04 8.80999268e-03
+ 4.49923208e-01 1.02177394e-02 9.99821128e-01 1.19367784e-03
+ 1.36120055e-03 3.07015239e-03 2.78754041e-03 8.34473784e-01
+ 6.69719076e-03 9.91844755e-01 1.49477430e-06 3.39018384e-05
+ 1.46352640e-04 9.82570940e-01 1.40107806e-01 3.49689593e-01
+ 9.80149308e-01 1.96064965e-03 3.95686737e-03 9.07914158e-01
+ 1.20167301e-03 3.24713147e-08 5.12934570e-03 1.79171610e-01
+ 2.60900427e-04 9.94371274e-01 9.36613675e-01 1.11361292e-01
+ 9.97102834e-01 1.21312585e-04 7.66238814e-02 9.63442123e-01
+ 8.48519932e-05 2.84035465e-03 1.01047886e-01 9.75479308e-01
+ 1.12990335e-04 9.36615642e-01 7.82816635e-02 7.20721829e-01
+ 1.22443683e-05 9.34350532e-01 7.77824539e-05 9.37353983e-01
+ 9.65328155e-01 3.43149029e-02 9.98007744e-01 2.50089579e-03
+ 1.92062087e-04 9.77315676e-01 1.60536415e-06 9.79847903e-05
+ 9.79744011e-01 8.90479552e-01 7.14763013e-06 8.13889995e-01
+ 1.16813813e-04 6.55840860e-03 6.36925940e-04 9.99998162e-01
+ 3.64398227e-04 9.98546981e-01 9.57473899e-01 2.25179632e-04
+ 9.77472995e-01 2.04921175e-04 9.55859759e-01 7.38496546e-04
+ 2.67146800e-03 8.24192284e-01 9.99811144e-01 1.93641671e-02
+ 9.71629091e-01 9.63151794e-01 9.99840598e-01 3.53338815e-07
+ 1.37027330e-03 1.20590039e-04 3.04917805e-04 9.49820846e-01
+ 9.60567511e-01 9.54689184e-01 8.94696030e-05 1.06868145e-06
+ 9.75997495e-01 9.00001673e-01 9.85283790e-01 3.71746252e-01
+ 3.90217014e-02 9.99979770e-01 9.76117473e-01 8.15862787e-03
+ 6.62037405e-01 9.99622081e-01 9.98871846e-01 9.99977058e-01
+ 2.16472529e-03 3.26427886e-07 2.05307138e-03 9.74389564e-01
+ 9.99992097e-01 6.30577604e-03 8.00566545e-04 9.53927874e-01
+ 9.86153766e-01 2.15640145e-09 7.30724052e-01 2.01268129e-05
+ 1.13428772e-01 9.84341077e-01 9.09638074e-01 8.66938347e-03
+ 2.42412838e-02 1.25104684e-02 9.98834058e-01 9.83029144e-01
+ 8.93550725e-04 9.64782852e-01 9.85558478e-01 1.00280339e-02
+ 8.41384920e-06 9.24271121e-01 9.85743256e-01 1.46869428e-02
+ 9.55786093e-01 2.39204870e-03 1.58858808e-04 9.99878460e-01
+ 9.60677009e-01 9.99939589e-01 8.79670865e-01 9.54814412e-01
+ 3.87026980e-01 3.74562956e-01 9.77295517e-01 6.66088282e-05
+ 2.56919085e-01 2.10660051e-06 1.87011088e-03 9.09620833e-01
+ 9.99742421e-01 1.90565957e-02 9.98759066e-01 1.09256356e-02
+ 1.37620554e-01 9.56335875e-01 9.84668160e-01 9.99977223e-01
+ 1.19205874e-04 8.09893799e-01 2.35393528e-02 1.34266998e-02
+ 9.55459436e-01 9.49356220e-01 9.69694718e-01 9.99956308e-01
+ 9.99995878e-01 1.52275178e-03 4.07173611e-01 9.52709414e-01
+ 4.67995217e-02 9.99986261e-01 1.30756443e-02 9.86090080e-01
+ 9.98382602e-01 1.67721759e-05 9.91475240e-01 8.90527262e-01
+ 9.58476913e-01 9.53782330e-01 9.72234493e-01 9.77076747e-01
+ 9.27726940e-01 4.99809643e-05 9.14318014e-01 2.74082468e-01]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Өмнө нь үзсэнчлэн sigmoid функцийн шийдвэрийн хязгаарыг бид 0.5 гэж авсан ба үүнийг round функц ашиглан тэгшитгэж болно.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">preds</span> <span class="o">=</span> <span class="n">preds_prob</span><span class="o">.</span><span class="n">round</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1. 0. 0. 1. 1. 0. 1. 1. 0. 0. 1. 1. 1. 1. 0. 0. 1. 1. 1. 1. 0. 0. 0. 0.
+ 0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+ 0. 1. 1. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 1. 0. 1. 0. 1. 0. 1. 1. 0. 1. 0.
+ 0. 1. 0. 0. 1. 1. 0. 1. 0. 0. 0. 1. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 1. 0.
+ 1. 1. 1. 0. 0. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+ 0. 0. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 0. 1. 1. 0. 0. 0. 1. 1. 0. 1. 1. 0.
+ 0. 1. 1. 0. 1. 0. 0. 1. 1. 1. 1. 1. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 1. 0.
+ 0. 1. 1. 1. 0. 1. 0. 0. 1. 1. 1. 1. 1. 0. 0. 1. 0. 1. 0. 1. 1. 0. 1. 1.
+ 1. 1. 1. 1. 1. 0. 1. 0.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Эцэст нь бид сургалтын үр дүнг гаргах боломжтой боллоо.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_numpy</span> <span class="o">=</span> <span class="p">(</span><span class="n">preds</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Score Numpy: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score_numpy</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score Numpy: 0.96
+</pre></div>
+</div>
+</div>
+</div>
+<p>Сургасан өгөгдөлд өндөр үр дүн үзүүлж байгаа боловч бид сургалтанд ашиглагдаагүй өгөгдлөөр туршиж үзэж болно.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>   <span class="c1"># new observation (-0.8, 0.8)  with an intercept of 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_x</span><span class="p">)</span>
+<span class="n">preds_prob_new_x</span> <span class="o">=</span> <span class="n">calc_h</span><span class="p">(</span><span class="n">new_x</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;шинэ өгөгдлийн таамагласан утга: &quot;</span><span class="p">,</span> <span class="n">preds_prob_new_x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.  -0.8  0.8]
+шинэ өгөгдлийн таамагласан утга:  0.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h2>Шийдвэрийн хязгаарыг дүрсэлж харвал<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">x1_min</span><span class="p">,</span> <span class="n">x1_max</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+<span class="n">x2_min</span><span class="p">,</span> <span class="n">x2_max</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+<span class="n">xx1</span><span class="p">,</span> <span class="n">xx2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x1_min</span><span class="p">,</span> <span class="n">x1_max</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x2_min</span><span class="p">,</span> <span class="n">x2_max</span><span class="p">))</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">xx1</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">xx2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()]</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">add_intercept</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
+<span class="n">probs</span> <span class="o">=</span> <span class="n">calc_h</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+<span class="n">probs</span> <span class="o">=</span> <span class="n">probs</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx1</span><span class="p">,</span> <span class="n">xx2</span><span class="p">,</span> <span class="n">probs</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">xx1</span><span class="p">,</span> <span class="n">xx2</span><span class="p">,</span> <span class="n">probs</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">],</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span> <span class="c1"># decision boundary at 0.5</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">s</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s1">&#39;rx&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># new observation correctly classified as 1 (blue)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$X_1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$X_2$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="n">x1_min</span><span class="p">,</span> <span class="n">x1_max</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="n">x2_min</span><span class="p">,</span> <span class="n">x2_max</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[6.43832548e-08 1.20268685e-07 2.24663322e-07 ... 9.99997269e-01
+  9.99998538e-01 9.99999217e-01]
+ [5.60255490e-08 1.04656392e-07 1.95499377e-07 ... 9.99996861e-01
+  9.99998320e-01 9.99999100e-01]
+ [4.87527719e-08 9.10707586e-08 1.70121255e-07 ... 9.99996393e-01
+  9.99998069e-01 9.99998966e-01]
+ ...
+ [9.34529146e-11 1.74571165e-10 3.26101029e-10 ... 9.98121779e-01
+  9.98993657e-01 9.99461024e-01]
+ [8.13216235e-11 1.51909768e-10 2.83769267e-10 ... 9.97842197e-01
+  9.98843707e-01 9.99380671e-01]
+ [7.07651171e-11 1.32190087e-10 2.46932667e-10 ... 9.97521101e-01
+  9.98671444e-01 9.99288347e-01]]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-2.9285689040924416, 3.8246288578434964)
+</pre></div>
+</div>
+<img alt="_images/a60de95b27ea24ee0b1fee6d5bf107ffb408486ea6aa7b340bc0af83000d441d.png" src="_images/a60de95b27ea24ee0b1fee6d5bf107ffb408486ea6aa7b340bc0af83000d441d.png" />
+</div>
+</div>
+</section>
+<section id="sklearn">
+<h2>Sklearn хэрэгжүүлэлт<a class="headerlink" href="#sklearn" title="Link to this heading">#</a></h2>
+<p>Мэдээж logistic regression нь аль хэдийн Scikit-learn хөгжүүлэгдсэн байгаа.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mf">1e20</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s1">&#39;lbfgs&#39;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">score_sklearn</span> <span class="o">=</span> <span class="p">(</span><span class="n">preds</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Score Sklearn: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score_sklearn</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Score Sklearn: 0.96
+[-1.30441878] [[ 5.46027777 -1.05250561]]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id8">
+<h3>Logistic regression Даалгавар<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>titanic санг ашиглан сургалт хийн үр дүнг дүгнэж бичнэ үү</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pca">
+<h1>4. PCA Бууруулах арга<a class="headerlink" href="#pca" title="Link to this heading">#</a></h1>
+<p>Үндсэн бүрэлдэхүүн хэсгийн анализ буюу PCA нь том хэмжээний мэдээллийн хүснэгт дэх мэдээллийн агуулгыг илүү хялбараар харж, задлан шинжилж болох жижиг багц “хураангуй индекс”-ээр нэгтгэн дүгнэх боломжийг олгодог статистикийн горим юм.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;feature_names&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;sepal length (cm)&#39;,
+ &#39;sepal width (cm)&#39;,
+ &#39;petal length (cm)&#39;,
+ &#39;petal width (cm)&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x7fa09d794ac0&gt;
+</pre></div>
+</div>
+<img alt="_images/4f0261c90a10fd7c5a6c470ef2f47790a044bfb8599ffca747c63bf246d0566f.png" src="_images/4f0261c90a10fd7c5a6c470ef2f47790a044bfb8599ffca747c63bf246d0566f.png" />
+</div>
+</div>
+<section id="id9">
+<h2>PCA Даалгавар<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<p>mnist санг дээрх аргаар бууруулан дүрсэлж харуулна уу</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="svm_lab9.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lab 5</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lab 2-3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cs308-2-3">CS308 Машин сургалт хичээлийн Лабораторийн ажил 2 болон 3 заавар</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-classifier">Linear Classifier</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-libraries">1. Importing Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-models">2. Building Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perceptron-algorithm">2.1 Perceptron algorithm:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Загваруудынхаа гүйцэтгэлийг шалгахын тулд алдагдлын функцийг тодорхойлъё.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Илүү сайжирсан байна!</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-perceptron">2.2 Average Perceptron:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pegasos-algorithm">2.3 Pegasos Algorithm:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Linear classifier Даалгавар</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression">3. Logistic regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Өгөгдлийн сан үүсгэх</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3. Logistic regression</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function">Loss function</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradiend-descent">Gradiend descent</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model">Training the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-loss-function">Plot the loss function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Таамаглалуудыг дэвшүүлэх</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Шийдвэрийн хязгаарыг дүрсэлж харвал</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">Sklearn хэрэгжүүлэлт</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Logistic regression Даалгавар</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">4. PCA Бууруулах арга</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">PCA Даалгавар</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mongolian University of Science and Technology teacher Ph.D Orgil.J
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
